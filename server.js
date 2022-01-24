@@ -1,22 +1,27 @@
-// Dependencies
 const express = require("express");
-const exphbs = require("express-handlebars");
-const path = require("path");
+const mongoose = require("mongoose");
 
-const hbs = exphbs.create({});
-
-// Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set Handlebars as the default template engine.
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
-app.use(express.static(path.join(__dirname, "public")));
-/* app.use(require("./controllers/routes")); */
+app.use(require("./routes"));
 
-// Starts the server to begin listening
-app.listen(PORT, () => {
-  console.log(`Server listening on: http://localhost:${PORT}`);
-});
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/social-network",
+  {
+    // useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+// Use this to log mongo queries being executed!
+mongoose.set("debug", true);
+
+app.listen(PORT, () =>
+  console.log(`Successfully connected to localhost on port:${PORT}`)
+);
