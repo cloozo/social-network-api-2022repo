@@ -1,12 +1,12 @@
 const { Schema, model } = require("mongoose");
-// create the Pizza model using the ThoughtSchema
+// create the Thought model using the ThoughtSchema
 
 const ThoughtSchema = new Schema({
   thoughtText: {
     type: String,
     require: true,
     minLength: 1,
-    maxLength: 20,
+    maxLength: 80,
   },
 
   reactions: {
