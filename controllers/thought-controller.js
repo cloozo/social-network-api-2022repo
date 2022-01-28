@@ -1,6 +1,6 @@
-const { Thought } = require("../models");
+const { Thought } = require("../model");
 
-const pizzaController = {
+const thoughtController = {
   // get all thoughts
   getAllThought(req, res) {
     Thought.find({})
