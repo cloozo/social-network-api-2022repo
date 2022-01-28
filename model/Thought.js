@@ -1,9 +1,17 @@
 const { Schema, model } = require("mongoose");
-// create the Pizza model using the PizzaSchema
+// create the Pizza model using the ThoughtSchema
 
 const ThoughtSchema = new Schema({
-  thoughtName: {
+  thoughtText: {
     type: String,
+    require: true,
+    minLength: 1,
+    maxLength: 20,
+  },
+
+  reactions: {
+    type: String,
+    require: true,
   },
   createdBy: {
     type: String,
@@ -12,13 +20,12 @@ const ThoughtSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  size: {
+  username: {
     type: String,
-    default: "Large",
+    require: true,
   },
-  toppings: [],
 });
-const Thought = model("Pizza", ThoughtSchema);
+const Thought = model("Thought", ThoughtSchema);
 
-// export the Pizza model
+// export the Thought model
 module.exports = Thought;

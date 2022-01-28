@@ -11,7 +11,7 @@ const thoughtController = {
       });
   },
 
-  // get one pizza by id
+  // get one thought by id
   getThoughtById({ params }, res) {
     Thought.findOne({ _id: params.id })
       .then((dbThoughtData) => {
