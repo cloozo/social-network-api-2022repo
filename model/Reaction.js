@@ -4,7 +4,7 @@ const ReactionSchema = new Schema({
   //   reactionId:
   username: {
     type: String,
-    required: true,
+    required: false,
   },
   writtenBy: {
     type: String,
