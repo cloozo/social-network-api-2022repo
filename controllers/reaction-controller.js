@@ -23,7 +23,7 @@ const reactionController = {
   },
 
   // remove reaction
-  rremoveReaction({ params }, res) {
+  removeReaction({ params }, res) {
     Reaction.findOneAndDelete({ _id: params.reactionId })
       .then((deletedReaction) => {
         if (!deletedReaction) {

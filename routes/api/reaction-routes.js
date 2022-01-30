@@ -8,6 +8,6 @@ const {
 router.route("/:thoughtId").post(addReaction);
 
 // /api/reactions/<thoughtId>/<reactionId>
-// router.route("/:thoughtId/:reactionId").delete(removeReaction);
+router.route("/:thoughtId/:reactionId").delete(removeReaction);
 
 module.exports = router;
