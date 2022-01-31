@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -24,5 +23,5 @@ app.use(require("./routes"));
 // app.use(require("./"));
 
 app.listen(PORT, () =>
-  console.log(`Successfully connected to localhost on port:${PORT}`)
+  console.log(`🌍 Successfully connected to localhost on port:${PORT}`)
 );
