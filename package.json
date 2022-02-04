@@ -1,26 +1,24 @@
 {
   "name": "social-network-api-2022repo",
   "version": "1.0.0",
-  "description": "",
+  "description": "social media network",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "none",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cloozo/social-network-api-2022repo.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "npm",
+    "install"
+  ],
+  "author": "jonacin pierre-louis",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cloozo/social-network-api-2022repo/issues"
   },
-  "homepage": "https://github.com/cloozo/social-network-api-2022repo#readme",
-  "dependencies": {
-    "express": "^4.17.2",
-    "mongodb": "^4.3.1",
-    "mongoose": "^6.1.8"
-  }
+  "homepage": "https://github.com/cloozo/social-network-api-2022repo#readme"
 }

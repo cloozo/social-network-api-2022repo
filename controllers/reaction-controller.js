@@ -1,7 +1,6 @@
 const { Reaction, Thought } = require("../models");
 
 const reactionController = {
-  // add reaction to thought
   addReaction({ params, body }, res) {
     console.log(params);
     Reaction.create(body)
@@ -15,7 +14,7 @@ const reactionController = {
       .then((dbThoughtData) => {
         console.log(dbThoughtData);
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thought found with this id!" });
+          res.status(404).json({ message: "Sorry No thought found with this id!" });
           return;
         }
         res.json(dbThoughtData);
@@ -23,7 +22,6 @@ const reactionController = {
       .catch((err) => res.json(err));
   },
 
-  // add reply to reaction
   addReply({ params, body }, res) {
     Reaction.findOneAndUpdate(
       { _id: params.reactionId },
@@ -32,7 +30,7 @@ const reactionController = {
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thought found with this id!" });
+          res.status(404).json({ message: "Sorry No thought found with this id!" });
           return;
         }
         res.json(dbThoughtData);
@@ -40,7 +38,6 @@ const reactionController = {
       .catch((err) => res.json(err));
   },
 
-  // remove reaction
   removeReaction({ params }, res) {
     Reaction.findOneAndDelete({ _id: params.reactionId })
       .then((deletedReaction) => {
@@ -55,14 +52,13 @@ const reactionController = {
       })
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          res.status(404).json({ message: "No thought found with this id!" });
+          res.status(404).json({ message: "Sorry No thought found with this id!" });
           return;
         }
         res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
-  // remove reply
   removeReply({ params }, res) {
     Reaction.findOneAndUpdate(
       { _id: params.reactionId },
@@ -73,5 +69,5 @@ const reactionController = {
       .catch((err) => res.json(err));
   },
 };
-
+//Exporting modules
 module.exports = reactionController;

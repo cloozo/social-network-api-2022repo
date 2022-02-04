@@ -20,7 +20,7 @@ one can  open API GET routes in Insomnia for users and thoughts.
 
 ## Social Network Api: 
 Link to my repo-> (https://github.com/cloozo/social-network-api-2022repo)
- Link to walkthrough video-> ![linktothevideo](---)
+Link to walkthrough video-> ![https://www.screencast.com/t/bF7L8IV3W8]
 
 
 ---
